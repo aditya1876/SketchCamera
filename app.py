@@ -1,15 +1,16 @@
 
 #import libraries
 import cv2
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 import jsonify
 import requests
 
 app= Flask(__name__)
 
-@app.route('/',method=['GET'])
+@app.route('/')
 def Home():
-	return render_template('index.html',code())
+	return render_template('index.html')
+	#return Response(code())
 
 
 def code():
